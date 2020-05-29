@@ -27,3 +27,15 @@ int main()
     cout << str[cur] << endl;
     return 0;
 }
+////////////
+
+num=int(input())
+direction=input()
+dictt={1:'N', 2:'E', 3:'S', 4:'W'}
+turnn={'L':-1, 'R':1}
+init=1
+for turn in direction:
+    init+=turnn[turn]
+init%=4    
+print(dictt[init+1])    
+
