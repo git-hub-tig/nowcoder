@@ -38,3 +38,29 @@ int main()
 	cout << result << endl;
 	return 0;
 }
+////////////
+
+n=int(input())
+# x1_bottom_left_corner=list(map(int, inpu()))
+# y1_bottom_left_corner=list(map(int, inpu()))
+# x2_top_right_corner=list(map(int, inpu()))
+# y2_top_right_corner=list(map(int, inpu()))
+
+x1=list(map(int, input().split()))
+y1=list(map(int, input().split()))
+x2=list(map(int, input().split()))
+y2=list(map(int, input().split()))
+
+x11=set(x1) | set(x2)
+y11=set(y1) | set(y2)
+
+res=1
+for x in x11:
+    for y in y11:
+        cnt=0
+        for i in range(n):
+            # if x1[i]<=x<x2[i] && y1[i]<=y<y2[i]:
+            if x1[i]<=x<x2[i] and y1[i]<=y<y2[i]:
+                cnt+=1 
+        res=max(res, cnt)                
+print(res)
