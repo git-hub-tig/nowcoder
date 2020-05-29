@@ -21,3 +21,25 @@ int main() {
     cout << *it / 60 << " " << *it % 60 << endl;
     return 0;
 }
+//
+
+from bisect import bisect, bisect_left
+n=int(input())
+times=[]
+for _ in range(n):
+    tim=list(map(int, input().split()))
+    time=tim[0]*60+tim[1]
+    times.append(time)
+times.sort()
+cost=int(input())
+
+end=list(map(int, input().split()))
+ending=end[0]*60+end[1]
+
+#  5 6 7
+i=bisect(times,ending-cost) # i is 2, cuz [lo,i] is val<=x
+# i=bisect_left(times,ending-cost) # i is 1, cuz [i, hi] is val>=x
+#  left something wrong like 6.02< 6.30< 6.37. need 6.02
+target=times[i-1]
+# target=times[i]
+print(target//60,target%60) # python3 / is real float
