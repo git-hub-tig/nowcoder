@@ -28,14 +28,12 @@ int main()
     return 0;
 }
 ////////////
-
 num=int(input())
 direction=input()
-dictt={1:'N', 2:'E', 3:'S', 4:'W'}
+dictt={0:'N', 1:'E', 2:'S', 3:'W'}
 turnn={'L':-1, 'R':1}
-init=1
+init=0
 for turn in direction:
     init+=turnn[turn]
 init%=4    
-print(dictt[init+1])    
-
+print(dictt[init])    
