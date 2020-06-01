@@ -17,3 +17,30 @@ int main()
     cout << s << endl;
     return 0;
 }
+///////////
+// python
+strr=input()
+newstr=''
+for ch in strr:
+    if ch is 'z':
+        ch='a'
+    elif ch is 'Z':
+        ch='A'
+    elif ch.isalpha():
+        ch=chr(ord(ch)+1)
+    newstr+=ch        
+print(newstr)
+//////////////////
+# utf-8 
+str2=bytearray(strr, 'ascii')
+for index, byte in enumerate(str2):
+    if byte==ord('Z'):
+        # byte=ord('A')
+        byte=ord('A')
+    elif byte==ord('z'):
+        byte=ord('a')
+    elif chr(byte).isalpha():
+        byte+=1
+    str2[index]=byte
+print(str2.decode('ascii'))
+print(str(str2, 'ascii'))
