@@ -22,17 +22,18 @@ int main()
 	}
 	for (int i = 0; i < N; i++)
 	{
-		tree[i].push_back(i + 1);
+		tree[i].push_back(i + 1); 
 	}
+	// kruskal sort edge, start shortest.
 	sort(data.begin(), data.end(), [](Arc& c1, Arc& c2) {return c1.cost < c2.cost; });
 	int longestWood = 0;
-	for (int i = 0; i < M; i++)
+	for (int i = 0; i < M; i++) // edges
 	{
 		int b = data[i].b;
 		int e = data[i].e;
 		int bIndex = -1;
 		int eIndex = -1;
-		for (int i = 0; i < N; i++)
+		for (int i = 0; i < N; i++) // vertex traverl
 		{
 			if (find(tree[i].begin(),tree[i].end(),b) != tree[i].end())
 			{
@@ -43,10 +44,10 @@ int main()
 				eIndex = i;
 			}
 		}
-		if (bIndex == eIndex)
+		if (bIndex == eIndex) // same vertex, in sameset.
 		{
 			//已经在同一个集合中
-			continue;
+			continue; 
 		}
 		tree[bIndex].insert(tree[bIndex].end(), tree[eIndex].begin(), tree[eIndex].end());
 		tree[eIndex].clear();
@@ -56,7 +57,7 @@ int main()
 	return 0;
 }
 ///////
-// above is kruskal no unionset
+// above is kruskal with no unionfind,  no isSameset no unionset.
 // below is prim with priority_queue.
 
 import io
