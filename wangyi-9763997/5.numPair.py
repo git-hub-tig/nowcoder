@@ -2,7 +2,7 @@
 # sync
 #来源：牛客网
 # test git
-
+# fk
 
 n, k= list(map(int,input().split()))
 if k == 0:
