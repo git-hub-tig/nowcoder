@@ -1,5 +1,6 @@
 #链接：https://www.nowcoder.com/questionTerminal/bac5a2372e204b2ab04cc437db76dc4f
 #来源：牛客网
+# test git
 
 
 n, k= list(map(int,input().split()))
